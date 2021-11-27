@@ -23,7 +23,7 @@ export const ResultsTopSection = () => {
         <Typography variant="h5">
           {state.products.length === 0
             ? "Lo sentimos, pero no hemos podido encontrar ningún producto que coincida con sus criterios de búsqueda"
-            : `${state.products.length} MEJORES TOURS`}
+            : `LOS ${state.products.length} MEJORES TOURS`}
         </Typography>
       </Grid>
       <Grid item container xs={6} justifyContent="flex-end">

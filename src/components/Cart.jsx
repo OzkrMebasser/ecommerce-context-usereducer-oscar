@@ -3,6 +3,7 @@ import { makeStyles, Button, Container, Typography } from "@material-ui/core";
 import { CartHeading } from "./CartHeading";
 import { CartProduct } from "./CartProduct";
 import { useCart } from "../contexts/CartContext";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -49,14 +50,15 @@ export const Cart = () => {
             );
           })}
           {cartItems && cartItems.length ? (
-            <Button
+           <Link to="/products" > <Button
               size="large"
               color="primary"
               variant="contained"
               className={classes.buttonStyles}
             >
-              Ver y editar el carrito
-            </Button>
+             Agregar mas tours
+            </Button></Link>
+            
           ) : (
             ""
           )}  

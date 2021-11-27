@@ -15,3 +15,4 @@ export const Productspage = () => {
     </>
   );
 };
+export default Productspage;

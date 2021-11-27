@@ -32,17 +32,16 @@ export const CartHeading = ({ totalprice, itemsquantity }) => {
         <Typography variant="body2">Subtotal:</Typography>
         <Typography variant="h6">${totalprice}</Typography>
       </Grid>
-      <Link to="/payment" variant="h6"><Button
+      <Link to="/payment" variant="h6">
+        <Button
         size="large"
         variant="contained"
         color="primary"
         className={classes.buttonStyles}
-      >Proceder a la compra
-         
-         
-            
-        
-      </Button></Link>
+         >
+           Proceder a la compra
+         </Button>
+        </Link>
     </Grid>
   );
 };

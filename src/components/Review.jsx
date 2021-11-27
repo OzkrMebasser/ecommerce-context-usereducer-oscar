@@ -6,6 +6,10 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Grid from "@material-ui/core/Grid";
+import { CartHeading } from "./CartHeading";
+import { CartProduct } from "./CartProduct";
+import { useCart } from "../contexts/CartContext";
+
 
 const products = [
   { name: "Snorkel en Cozumel", desc: "Acuáticos", price: "$1805.99" },
@@ -40,6 +44,7 @@ const styles = theme => ({
 
 function Review(props) {
   const { classes } = props;
+  const { cartItems, subTotal } = useCart();
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -48,7 +53,7 @@ function Review(props) {
       </Typography>
       <List disablePadding>
         {products.map(product => (
-          <ListItem className={classes.listItem} key={product.name}>
+          <ListItem className={classes.listItem} key={product.name} >
             <ListItemText primary={product.name} secondary={product.desc} />
             <Typography variant="body2">{product.price}</Typography>
           </ListItem>
@@ -56,7 +61,7 @@ function Review(props) {
         <ListItem className={classes.listItem}>
           <ListItemText primary="Total" />
           <Typography variant="subtitle1" className={classes.total}>
-            $4312.98
+            ${subTotal}
           </Typography>
         </ListItem>
       </List>
